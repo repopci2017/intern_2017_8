@@ -1,0 +1,26 @@
+<odoo>
+<data>
+  <!-- access right loan order -->
+    <record model="ir.module.category" id="product_category">
+            <field name="name">Product Category Custom</field>
+            <field name="description">Product Category Application</field>
+            <field name="sequence">3</field>
+    </record>
+
+    <!-- group for user -->
+    <record id="product_category_user" model="res.groups">
+         <field name="name">User</field>
+         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+         <field name="users" eval="[(4, ref('base.user_root'))]"/>
+         <field name="category_id" ref="magang_product.product_category"/>
+    </record>
+
+    <!-- group for manager -->
+    <record id="product_category_manager" model="res.groups">
+         <field name="name">Manager</field>
+         <field name="implied_ids" eval="[(4, ref('magang_product.product_category_user'))]"/>
+         <field name="category_id" ref="magang_product.product_category"/>
+	</record>
+</data>
+</odoo>
+	

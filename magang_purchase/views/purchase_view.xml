@@ -1,0 +1,34 @@
+<odoo>
+	<data>
+		<record id="view_order_form_inherit" model="ir.ui.view">
+			<field name="name">purchase.order.form.inherit</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+				<field name="arch" type="xml">
+					<field name="amount_tax" position="after">
+						<field name="down_payment"/>									
+					</field>				
+				</field>	
+		</record>
+		<record id="view_order_form_inherit5" model="ir.ui.view">
+			<field name="name">purchase.order.form.inherit5</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+				<field name="arch" type="xml">
+					<xpath expr="//field[@name='amount_total']" position="replace">
+						<field name="total_payment" nolabel='1'/>									
+					</xpath>
+				</field>	
+		</record>
+		<record id="view_order_form_inherit3" model="ir.ui.view">
+			<field name="name">purchase.order.form.inherit3</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+				<field name="arch" type="xml">
+					<xpath expr="//label[@for='amount_total']" position="replace">
+						<label for="total_payment"/>									
+					</xpath>
+				</field>	
+		</record>
+	</data>
+</odoo>

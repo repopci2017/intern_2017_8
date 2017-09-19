@@ -1,0 +1,7 @@
+id,name,group_id/id,model_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_po_manager,po.manager,Magang_base.purchase_order_manager,Magang_base.model_purchase_order,True,True,True,True
+access_po_user,po.user,Magang_base.purchase_order_user,Magang_base.model_purchase_order,True,False,False,False
+access_so_manager,so.manager,Magang_base.sale_order_manager,Magang_base.model_sale_order,True,True,True,True
+access_so_user,so.user,Magang_base.sale_order_user,Magang_base.model_sale_order,True,False,False,False
+access_account_invoice_manager,account_invoice.manager,Magang_base.account_invoice_manager,Magang_base.model_account_invoice,True,True,True,True
+access_account_invoice_manager,account_invoice.user,Magang_base.account_invoice_user,Magang_base.model_account_invoice,True,False,False,False

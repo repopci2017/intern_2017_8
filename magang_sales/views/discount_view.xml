@@ -1,0 +1,44 @@
+<odoo>
+	<data>
+		<record id="view_order_form_inherit3" model="ir.ui.view" >
+			<field name="name">sale.order.form.inherit3</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+				<field name="arch" type="xml">
+					<xpath expr="//notebook/page[1]/field/tree/field[@name='tax_id']" position="after">
+						<field name='discount_m2o'/>						
+					</xpath>	
+				</field>
+		</record>
+		<record id="view_order_form_inherit8" model="ir.ui.view">
+			<field name="name">sale.order.form.inherit8</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+				<field name="arch" type="xml">
+					<field name="amount_tax" position="after">
+						<field name="price_discount"/>									
+					</field>
+				</field>	
+		</record>
+		<record id="view_order_form_inherit4" model="ir.ui.view">
+			<field name="name">sale.order.form.inherit4</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+				<field name="arch" type="xml">
+					<xpath expr="//field[@name='amount_total']" position="replace">
+						<field name="total_discount" nolabel='1'/>									
+					</xpath>
+				</field>	
+		</record>
+		<record id="view_order_form_inherit9" model="ir.ui.view">
+			<field name="name">sale.order.form.inherit9</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+				<field name="arch" type="xml">
+					<xpath expr="//label[@for='amount_total']" position="replace">
+						<label for="total_discount"/>									
+					</xpath>
+				</field>	
+		</record>
+	</data>
+</odoo>

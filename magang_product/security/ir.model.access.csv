@@ -1,0 +1,3 @@
+id,name,group_id/id,model_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_pc_manager,pc.manager,magang_product.product_category_manager,magang_product.model_product_category,True,True,True,True
+access_pc_user,pc.user,magang_product.product_category_user,magang_product.model_product_category,True,False,False,False

@@ -1,0 +1,26 @@
+<odoo>
+	<data>
+		<record id="branch_menu_action" model="ir.actions.act_window">
+			<field name="name">Menu branch</field>
+		 	<field name="type">ir.actions.act_window</field>
+		 	<field name="res_model">res.partner</field>
+		 	<field name="domain">[('branch','=',True),('customer','=',False),('supplier','=',False)]</field>
+		 	<field name="context">{'default_branch':1, 'default_customer':0, 'default_supplier':0}</field>
+		 	<field name="view_type">form</field>
+		 		<field name="View_mode">tree,form
+		 	</field>
+		</record>	
+			
+		<menuitem id="base_menu_branch" name="Branch" parent="base.menu_users" sequence="2" action="branch_menu_action"/>
+		<record id="view_res_partner_form_inherit" model="ir.ui.view">
+			<field name="name">res_partner_form_inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<field name="lang" position="after">	
+					<field name="branch"/>
+				</field>
+		    </field>	
+		</record>
+	</data>
+</odoo>

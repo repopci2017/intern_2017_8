@@ -1,0 +1,34 @@
+<odoo>
+	<data>
+		<record id="view_order_form_inherit7" model="ir.ui.view">
+			<field name="name">sale.order.form.inherit7</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+				<field name="arch" type="xml">
+					<field name="partner_id" position="after">
+						<field name="branch_id" domain="[('branch','=',True),('customer','=',False),('supplier','=',False)]"/>	
+					</field>				
+				</field>	
+		</record>
+		<record id="view_order_form_inherit" model="ir.ui.view">
+			<field name="name">purchase.order.form.inherit</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+				<field name="arch" type="xml">
+					<field name="partner_id" position="after">
+						<field name="branch_id" domain="[('branch','=',True),('customer','=',False),('supplier','=',False)]"/>	
+					</field>				
+				</field>	
+		</record>		
+		<record id="view_invoice_form_inherit" model="ir.ui.view">
+			<field name="name">account.invoice.form.inherit</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form"/>
+				<field name="arch" type="xml">
+					<field name="partner_id" position="after">
+						<field name="branch_id" domain="[('branch','=',True),('customer','=',False),('supplier','=',False)]"/>	
+					</field>				
+				</field>	
+		</record>
+	</data>
+</odoo>

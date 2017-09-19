@@ -1,0 +1,22 @@
+<odoo>
+	<data>
+		<record id="view_discount_form_inherit" model="ir.ui.view">
+			<field name="name">discount.discount.form.inherit</field>
+			<field name="model">discount.discount</field>
+			<field name="inherit_id" ref="magang_sales.view_form_discount_discount"/>
+				<field name="arch" type="xml">
+					<field name="status" position="after">
+						<field name="date"/></field>				
+				</field>
+		</record>
+		<record id="view_discount_tree_inherit" model="ir.ui.view">
+			<field name="name">discount.discount.tree.inherit</field>
+			<field name="model">discount.discount</field>
+			<field name="inherit_id" ref="magang_sales.view_tree_discount_discount"/>
+				<field name="arch" type="xml">
+					<field name="status" position="after">
+						<field name="date"/></field>				
+				</field>
+		</record>
+	</data>
+</odoo>

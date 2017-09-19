@@ -1,0 +1,67 @@
+<odoo>
+<data>
+  <!-- access right loan order -->
+    <record model="ir.module.category" id="purchase_order">
+            <field name="name">Purchase Order Custom</field>
+            <field name="description">The Purchase Order Application</field>
+            <field name="sequence">3</field>
+    </record>
+
+    <!-- group for user -->
+    <record id="purchase_order_user" model="res.groups">
+         <field name="name">User</field>
+         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+         <field name="users" eval="[(4, ref('base.user_root'))]"/>
+         <field name="category_id" ref="Magang_base.purchase_order"/>
+    </record>
+
+    <!-- group for manager -->
+    <record id="purchase_order_manager" model="res.groups">
+         <field name="name">Manager</field>
+         <field name="implied_ids" eval="[(4, ref('Magang_base.purchase_order_user'))]"/>
+         <field name="category_id" ref="Magang_base.purchase_order"/>
+	</record>
+	
+	<record model="ir.module.category" id="sale_order">
+            <field name="name">Sale Order Custom</field>
+            <field name="description">The sale Order Application</field>
+            <field name="sequence">3</field>
+    </record>
+
+    <!-- group for user -->
+    <record id="sale_order_user" model="res.groups">
+         <field name="name">User</field>
+         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+         <field name="users" eval="[(4, ref('base.user_root'))]"/>
+         <field name="category_id" ref="Magang_base.sale_order"/>
+    </record>
+
+    <!-- group for manager -->
+    <record id="sale_order_manager" model="res.groups">
+         <field name="name">Manager</field>
+         <field name="implied_ids" eval="[(4, ref('Magang_base.sale_order_user'))]"/>
+         <field name="category_id" ref="Magang_base.sale_order"/>
+	</record>
+	
+	<record model="ir.module.category" id="account_invoice">
+            <field name="name">Account Invoice Custom</field>
+            <field name="description">The sale Order Application</field>
+            <field name="sequence">3</field>
+    </record>
+
+    <!-- group for user -->
+    <record id="account_invoice_user" model="res.groups">
+         <field name="name">User</field>
+         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+         <field name="users" eval="[(4, ref('base.user_root'))]"/>
+         <field name="category_id" ref="Magang_base.account_invoice"/>
+    </record>
+
+    <!-- group for manager -->
+    <record id="account_invoice_manager" model="res.groups">
+         <field name="name">Manager</field>
+         <field name="implied_ids" eval="[(4, ref('Magang_base.account_invoice_user'))]"/>
+         <field name="category_id" ref="Magang_base.account_invoice"/>
+	</record>
+</data>
+</odoo>

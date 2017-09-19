@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report 
+            id="action_report_sale_order_custom" 
+            string="Sale Order"
+            model="sale.order" 
+            report_type="qweb-pdf"
+            file="magang_report.report_saleorder_inherit" 
+            name="magang_report.report_saleorder_inherit" 
+        />
+    </data>
+</odoo>
