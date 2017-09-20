@@ -8,5 +8,25 @@
             file="magang_report.report_saleorder_inherit" 
             name="magang_report.report_saleorder_inherit" 
         />
+<!--        <record id="product_templates_form_views" model="ir.ui.view">-->
+<!--			<field name="name">product.template.form.products</field>-->
+<!--			<field name="model">product.template</field>-->
+<!--			<field name="inherit_id" ref="product.product_template_only_form_view"/>-->
+<!--				<field name="arch" type="xml">-->
+<!--					<xpath expr="//form/sheet/notebook/page[2]/group/group[@name='group_lots_and_weight']" position="inside">					-->
+<!--						<field name='tin_dus'/>-->
+<!--					</xpath>-->
+<!--				</field>					-->
+<!--		</record>-->
+		<record id="product_products_form_views" model="ir.ui.view">
+			<field name="name">product.product.form.products</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view"/>
+				<field name="arch" type="xml">
+					<xpath expr="//form/sheet/notebook/page[2]/group/group[@name='group_lots_and_weight']" position="inside">					
+						<field name='tin_dus'/>
+					</xpath>
+				</field>					
+		</record>       
     </data>
 </odoo>

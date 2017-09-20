@@ -83,12 +83,22 @@
                             <t t-foreach="layout_category['lines']" t-as="l">
                                 <tr>
                                     <td><span t-field="l.name"/></td>
-                                    <td class="text-right">
-<!--                                        <span t-esc="l.product_uom_qty % l.product_id.tin_dus"/-->
-                                    </td>
-                                    <td class="text-right">
-<!--                                        <span t-esc="(l.product_uom_qty / l.product_id.tin_dus)//1"/-->
-                                    </td>
+									<t t-if="tin_dus == 0">
+										<td class="text-right">
+ 									    	<span t-esc="l.product_uom_qty"></span>
+ 									    </td>
+ 									    <td class="text-right">
+ 									    	<span t-esc="0"></span>
+ 									    </td>
+									</t>
+									<t t-if="tin_dus != 0">
+										<td class="text-right">
+ 									    	<span t-esc="l.product_uom_qty % l.product_id.tin_dus"/>
+ 									    </td>
+ 									    <td class="text-right">
+ 									    	<span t-esc="l.product_uom_qty / l.product_id.tin_dus"/>		
+ 									    </td>
+									</t>
                                     <td class="text-right">
                                         <span t-field="l.product_uom_qty"/>
                                         <span t-field="l.product_uom" groups="product.group_uom"/>
